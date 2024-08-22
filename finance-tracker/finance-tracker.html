@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Finance Tracker</title>
+    <link rel="stylesheet" href="finance-tracker.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Personal Finance Tracker</h1>
+        
+        <div class="form-section">
+            <h2>Add Transaction</h2>
+            <form id="transactionForm">
+                <input type="text" id="description" placeholder="Description" required>
+                <input type="number" id="amount" placeholder="Amount" required>
+                <select id="type" required>
+                    <option value="income">Income</option>
+                    <option value="expense">Expense</option>
+                </select>
+                <button type="submit">Add Transaction</button>
+            </form>
+        </div>
+
+        <div class="balance-section">
+            <h2>Balance Summary</h2>
+            <p>Total Income: <span id="totalIncome">$0.00</span></p>
+            <p>Total Expenses: <span id="totalExpenses">$0.00</span></p>
+            <p>Total Savings: <span id="totalSavings">$0.00</span></p>
+        </div>
+
+        <div class="chart-section">
+            <h2>Financial Overview</h2>
+            <canvas id="financeChart"></canvas>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="finance-tracker.js"></script>
+</body>
+</html>
