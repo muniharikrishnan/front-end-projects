@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roman AI - Multimodal Dubbing AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #3b3b98;
+            padding: 20px;
+            text-align: center;
+            color: #fff;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .section-title {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .input-group {
+            margin-bottom: 30px;
+        }
+
+        .input-group label {
+            font-weight: 500;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .input-group input[type="file"],
+        .input-group input[type="text"],
+        .input-group textarea,
+        .input-group select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1em;
+        }
+
+        .input-group input[type="file"] {
+            padding: 5px;
+        }
+
+        .chat-input-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .chat-input-group input[type="text"] {
+            flex: 1;
+        }
+
+        .input-group button {
+            padding: 10px 20px;
+            background-color: #3b3b98;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .input-group button:hover {
+            background-color: #2d2d72;
+        }
+
+        .output-group {
+            margin-top: 40px;
+        }
+
+        .output-group h2 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .output-group .output-box {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            min-height: 150px;
+            font-size: 1em;
+            color: #555;
+            white-space: pre-wrap;
+        }
+
+        .language-selection {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        .language-selection select {
+            width: 48%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Roman AI - Multimodal Dubbing AI</h1>
+    </header>
+
+    <div class="container">
+        <div class="language-selection">
+            <div class="input-group">
+                <label for="original-language">Original Language</label>
+                <select id="original-language">
+                    <option value="en">English</option>
+                    <option value="hi">Hindi</option>
+                    <option value="ta">Tamil</option>
+                    <option value="kn">Kannada</option>
+                    <option value="te">Telugu</option>
+                    <option value="ml">Malayalam</option>
+                    <option value="mr">Marathi</option>
+                    <option value="bn">Bengali</option>
+                    <option value="gu">Gujarati</option>
+                    <option value="pa">Punjabi</option>
+                    <option value="ur">Urdu</option>
+                    <option value="or">Odia</option>
+                    <option value="zh">Chinese</option>
+                    <option value="ja">Japanese</option>
+                    <option value="ne">Nepali</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="output-language">Output Language</label>
+                <select id="output-language">
+                    <option value="en">English</option>
+                    <option value="hi">Hindi</option>
+                    <option value="ta">Tamil</option>
+                    <option value="kn">Kannada</option>
+                    <option value="te">Telugu</option>
+                    <option value="ml">Malayalam</option>
+                    <option value="mr">Marathi</option>
+                    <option value="bn">Bengali</option>
+                    <option value="gu">Gujarati</option>
+                    <option value="pa">Punjabi</option>
+                    <option value="ur">Urdu</option>
+                    <option value="or">Odia</option>
+                    <option value="zh">Chinese</option>
+                    <option value="ja">Japanese</option>
+                    <option value="ne">Nepali</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="input-group">
+            <label>Upload Audio, Video, or Text</label>
+            <input type="file" accept="audio/*,video/*,.txt">
+        </div>
+
+        <div class="input-group">
+            <label>Type Text</label>
+            <textarea rows="4" placeholder="Type your text here..."></textarea>
+        </div>
+
+        <div class="input-group">
+            <label>Record Audio</label>
+            <button onclick="alert('Audio recording functionality will be implemented here.')">Record Audio</button>
+        </div>
+
+        <div class="input-group">
+            <label>Record Video</label>
+            <button onclick="alert('Video recording functionality will be implemented here.')">Record Video</button>
+        </div>
+
+        <div class="input-group chat-input-group">
+            <label for="chat-input">Chat with Roman AI</label>
+            <input type="text" id="chat-input" placeholder="Ask something...">
+            <button>Send</button>
+        </div>
+
+        <div class="output-group">
+            <h2>Output</h2>
+            <div class="output-box">
+                <!-- Display the processed output here -->
+            </div>
+        </div>
+    </div>
+    <script src="roman_ai.js"></script>
+</body>
+</html>
