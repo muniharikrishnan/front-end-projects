@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Shopping Assistant</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>AI-Powered Personal Shopping Assistant</h1>
+        <p>Select your preferences to get product recommendations:</p>
+        <div class="form-section">
+            <label for="category">Select Category:</label>
+            <select id="category">
+                <option value="electronics">Electronics</option>
+                <option value="fashion">Fashion</option>
+                <option value="home">Home</option>
+                <option value="beauty">Beauty</option>
+            </select>
+        </div>
+
+        <div class="form-section">
+            <label for="budget">Select Budget:</label>
+            <input type="range" id="budget" min="100" max="5000" value="1000">
+            <span id="budget-value">1000</span>
+        </div>
+
+        <button onclick="getRecommendations()">Get Recommendations</button>
+
+        <div class="recommendations">
+            <h2>Recommended Products</h2>
+            <div id="product-list">
+                <!-- Product recommendations will appear here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script src="recommendation_model.js"></script>
+</body>
+</html>
